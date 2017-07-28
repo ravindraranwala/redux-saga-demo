@@ -10,7 +10,6 @@ class StudentsPage extends Component {
   }
 
   render() {
-    console.log('rendering !!!!')
     const { students } = this.props;
     return (
       <div>

@@ -7,7 +7,7 @@ import studentsSaga from '../sagas'
 export default function configureStore(initialState) {
   // create the saga middleware
   const sagaMiddleware = createSagaMiddleware()   
-  return createStore(
+  const store = createStore(
     rootReducer,
     initialState,
     applyMiddleware(sagaMiddleware)
@@ -15,4 +15,5 @@ export default function configureStore(initialState) {
 
   // then run the saga
   sagaMiddleware.run(studentsSaga)
+  return store;
 }

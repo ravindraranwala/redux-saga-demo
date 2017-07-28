@@ -26,7 +26,6 @@ StudentsPage.propTypes = {
 };
 
 function mapStateToProps(state, ownProps) {
-  console.log(state)
   return {
     students: state.students
   };

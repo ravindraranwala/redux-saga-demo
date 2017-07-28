@@ -20,5 +20,12 @@ function* studentsSaga() {
   yield takeEvery(constants.STUDENTS_FETCH_REQUESTED, fetchStudents);
 }
 
+// single entry point to start all Sagas at once
+export function* rootSaga() {
+  yield [
+    studentsSaga()
+  ]
+}
 
-export default studentsSaga;
+
+export default rootSaga;

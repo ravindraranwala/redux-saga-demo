@@ -2,7 +2,7 @@ import { createStore, applyMiddleware } from 'redux';
 import rootReducer from '../reducers';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import createSagaMiddleware from 'redux-saga'
-import studentsSaga from '../sagas'
+import rootSaga from '../sagas'
 
 export default function configureStore(initialState) {
   // create the saga middleware
@@ -14,6 +14,6 @@ export default function configureStore(initialState) {
   );
 
   // then run the saga
-  sagaMiddleware.run(studentsSaga)
+  sagaMiddleware.run(rootSaga)
   return store;
 }

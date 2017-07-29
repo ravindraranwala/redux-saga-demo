@@ -1,24 +1,30 @@
 import React, {PropTypes} from 'react';
+import {
+  Table,
+  TableBody,
+  TableHeader,
+  TableHeaderColumn,
+  TableRow
+} from 'material-ui/Table';
 import StudentListRow from './StudentListRow';
 
 const StudentList = ({students}) => {
   return (
-    <table className="table">
-      <thead>
-        <tr>
-          <th>&nbsp;</th>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Stream</th>
-          <th>GPA</th>
-        </tr>
-      </thead>
-      <tbody>
+    <Table>
+      <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
+        <TableRow>
+          <TableHeaderColumn>ID</TableHeaderColumn>
+          <TableHeaderColumn>Name</TableHeaderColumn>
+          <TableHeaderColumn>Stream</TableHeaderColumn>
+          <TableHeaderColumn>GPA</TableHeaderColumn>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
         {students.map(student =>
           <StudentListRow key={student.id} student={student} />
         )}
-      </tbody>
-    </table>
+      </TableBody>
+    </Table>
   );
 };
 

@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import StudentList from '../components/StudentList'
 import { fetchStudents } from '../actions'
+import AppBar from 'material-ui/AppBar';
+
 
 class StudentsPage extends Component {
   componentDidMount() {
@@ -13,7 +15,10 @@ class StudentsPage extends Component {
     const { students } = this.props;
     return (
       <div>
-        <h1>Students</h1>
+        <AppBar
+          title="Students"
+          iconClassNameRight="muidocs-icon-navigation-expand-more"
+        />
         <StudentList students={students} />
       </div>
     );

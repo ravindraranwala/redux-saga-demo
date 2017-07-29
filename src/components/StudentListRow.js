@@ -1,14 +1,17 @@
 import React, {PropTypes} from 'react';
+import {
+  TableRow,
+  TableRowColumn,
+} from 'material-ui/Table';
 
 const StudentListRow = ({student}) => {
     return (
-        <tr>
-            <th>&nbsp;</th>
-            <td>{student.id}</td>
-            <td>{student.name}</td>
-            <td>{student.stream}</td>
-            <td>{student.gpa}</td>
-        </tr>
+        <TableRow>
+            <TableRowColumn>{student.id}</TableRowColumn>
+            <TableRowColumn>{student.name}</TableRowColumn>
+            <TableRowColumn>{student.stream}</TableRowColumn>
+            <TableRowColumn>{student.gpa}</TableRowColumn>
+        </TableRow>
     )
 }
 

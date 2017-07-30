@@ -14,7 +14,7 @@ function* fetchStudents(action) {
 
 /*
   Starts fetchStudents on each dispatched `STUDENTS_FETCH_REQUESTED` action.
-  Allows concurrent fetches of user.
+  Allows concurrent fetches of student.
 */
 export function* studentsSaga() {
   yield takeEvery(constants.STUDENTS_FETCH_REQUESTED, fetchStudents);
